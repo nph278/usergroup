@@ -1,20 +1,20 @@
 const Usergroup = require("../src");
-const usergroup = new Usergroup();
+const users = new Usergroup();
 
-usergroup.addgroup("admin", ["everyonePermission", "adminPermission"]);
-usergroup.addgroup("user", ["everyonePermission"]);
+users.addgroup("admin", ["everyonePermission", "adminPermission"]);
+users.addgroup("user", ["everyonePermission"]);
 
-usergroup.add("test", "password123", "admin");
+users.add("test", "password123", "admin");
 
-console.log(usergroup.group("test"));
-console.log(usergroup.permission("test", "everyonePermission"));
-console.log(usergroup.permission("test", "adminPermission"));
+console.log(users.group("test"));
+console.log(users.permission("test", "everyonePermission"));
+console.log(users.permission("test", "adminPermission"));
 
-usergroup.changegroup("test", "user");
+users.changegroup("test", "user");
 
-console.log(usergroup.group("test"));
-console.log(usergroup.permission("test", "everyonePermission"));
-console.log(usergroup.permission("test", "adminPermission"));
+console.log(users.group("test"));
+console.log(users.permission("test", "everyonePermission"));
+console.log(users.permission("test", "adminPermission"));
 
 // console.log(usergroup.users);
 // console.log(usergroup.groups);
